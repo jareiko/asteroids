@@ -1,0 +1,41 @@
+<head>
+  <title>Asteroids</title>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-44745711-1', 'meteor.com');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+  {{> layout}}
+</body>
+
+<template name="layout">
+  <div class="botview">
+    {{> view3d}}
+    {{> infopanel}}
+  </div>
+  {{loginButtons align="right"}}
+  {{#if currentUser}}
+  {{else}}
+    <span class="login-prompt">Log in to get your robot!</span>
+  {{/if}}
+</template>
+
+<template name="view3d">
+    <div id="view3d"></div>
+</template>
+
+<template name="infopanel">
+  <div class="infopanel">
+    <h2>Robot Status</h2>
+    <br>
+    Name:
+      <span class="name {{#if nameEditable}}editable{{/if}}">{{selected.name}}</span>
+  </div>
+</template>
