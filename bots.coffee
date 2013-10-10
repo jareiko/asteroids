@@ -80,7 +80,6 @@ class @BotComponent
 
 if Meteor.isServer
   Meteor.publish 'region', (x, y) ->
-    # console.log 'publish to user ' + @userId
     Bots.publish 'bots', @
 
 Meteor.methods
